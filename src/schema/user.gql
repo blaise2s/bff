@@ -1,0 +1,10 @@
+type User {
+  id: Int!
+  firstName: String!
+  lastName: String!
+}
+
+input UserFilter {
+  ids: [Int!]
+  search: String
+}
