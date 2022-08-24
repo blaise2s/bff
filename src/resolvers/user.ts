@@ -1,12 +1,12 @@
-import isEmpty from "lodash.isempty";
+import isEmpty from 'lodash.isempty';
 
-export interface User {
+interface User {
   id: number;
   firstName: string;
   lastName: string;
 }
 
-export interface UserFilter {
+interface UserFilter {
   ids?: number[];
   search?: string;
 }
@@ -22,7 +22,12 @@ const userSearchFilter = (search: string) => {
 
 const userResolverMap = {
   Query: {
-    users: (_parent: unknown, args: { filter: UserFilter }, _dataSources: unknown, _context: unknown): User[] => {
+    users: (
+      _parent: any,
+      args: { filter: UserFilter },
+      _context: any,
+      _info: any
+    ): User[] => {
       // No args or empty filter
       if (isEmpty(args) || isEmpty(args.filter)) {
         return users;
@@ -51,12 +56,22 @@ const userResolverMap = {
       // No ids or search string, also return all users
       return users;
     },
-    user: (_parent: unknown, args: { id: number }, _dataSources: unknown, _context: unknown): User | undefined => {
+    user: (
+      _parent: any,
+      args: { id: number },
+      _context: any,
+      _info: any
+    ): User | undefined => {
       return users.find(user => user.id === args.id);
     },
   },
   Mutation: {
-    addUser: (_parent: unknown, args: { firstName: string, lastName: string }, _dataSources: unknown, _context: unknown) => {
+    addUser: (
+      _parent: any,
+      args: { firstName: string, lastName: string },
+      _context: any,
+      _info: any
+    ) => {
       const { firstName, lastName } = args;
       const newUser: User = { id: users.length + 1, firstName, lastName }
       users.push(newUser);

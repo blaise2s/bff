@@ -1,6 +1,11 @@
 const healthCheckResolverMap = {
   Query: {
-      ping: () => 'pong',
+      ping: (
+        _parent: any,
+        _args: any,
+        _context: any,
+        _info: any
+      ) => 'pong',
   },
 };
 
