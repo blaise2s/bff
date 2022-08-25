@@ -20,6 +20,22 @@ const peopleResolverMap = {
     },
   },
   Person: {
+    firstName: async (
+      parent: Person,
+      _args: any,
+      _context: any,
+      _info: any
+    ) => {
+      return parent.first_name;
+    },
+    lastName: async (
+      parent: Person,
+      _args: any,
+      _context: any,
+      _info: any
+    ) => {
+      return parent.last_name;
+    },
     friends: async (
       parent: Person,
       _args: any,
