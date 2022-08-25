@@ -3,6 +3,9 @@ build/
 # Created by https://www.toptal.com/developers/gitignore/api/node,dotenv,windows,macos,visualstudiocode,yarn,emacs,vim,sublimetext,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,dotenv,windows,macos,visualstudiocode,yarn,emacs,vim,sublimetext,git
 
+### Docker ###
+postgres-data/
+
 ### dotenv ###
 .env
 

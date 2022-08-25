@@ -4,4 +4,6 @@ type Query {
   user(id: Int!): User
   people: [Person!]
   person(id: Int!): Person
+  products: [Product!]
+  product(id: Int!): Product
 }
