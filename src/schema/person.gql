@@ -3,5 +3,5 @@ type Person {
   firstName: String
   lastName: String
   email: String
-  friends: [Int!]
+  friends: [Person!]
 }

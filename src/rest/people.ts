@@ -7,7 +7,7 @@ const people: Person[] = [
     firstName: 'Blaise',
     lastName: 'Schaeffer',
     email: 'b.s@gmail.com',
-    friends: [2],
+    friends: [2, 3],
   },
   { 
     id: 2,
@@ -15,6 +15,13 @@ const people: Person[] = [
     lastName: 'Elliot',
     email: 'n.e@gmail.com',
     friends: [1],
+  },
+  { 
+    id: 3,
+    firstName: 'Nick',
+    lastName: 'Young',
+    email: 'n.y@gmail.com',
+    friends: [1, 2],
   },
 ];
 

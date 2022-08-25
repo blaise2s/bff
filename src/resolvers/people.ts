@@ -19,6 +19,16 @@ const peopleResolverMap = {
       return dataSources.peopleApi.getPerson(id);
     },
   },
+  Person: {
+    friends: async (
+      parent: Person,
+      _args: any,
+      { dataSources }: { dataSources: DataSources },
+      _info: any
+    ) => {
+      return dataSources.peopleApi.getFriends(parent.friends)
+    }
+  }
 };
 
 export default peopleResolverMap;
