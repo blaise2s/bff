@@ -1,7 +1,7 @@
 type Person {
   id: Int!
-  firstName: String
-  lastName: String
-  email: String
+  firstName: String!
+  lastName: String!
+  email: String!
   friends: [Person!]
 }

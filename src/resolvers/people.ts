@@ -42,9 +42,22 @@ const peopleResolverMap = {
       { dataSources }: { dataSources: DataSources },
       _info: any
     ) => {
-      return dataSources.peopleApi.getFriends(parent.friends)
+      if (parent.friends) {
+        return dataSources.peopleApi.getFriends(parent.friends);
+      }
     }
-  }
+  },
+  Mutation: {
+    addPerson: async (
+      _parent: any,
+      args: { firstName: string, lastName: string, email: string, friends?: number[] },
+      { dataSources }: { dataSources: DataSources },
+      _info: any
+    ) => {
+      const { firstName, lastName, email, friends } = args;
+      return dataSources.peopleApi.addPerson(firstName, lastName, email, friends);
+    },
+  },
 };
 
 export default peopleResolverMap;

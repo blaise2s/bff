@@ -6,7 +6,7 @@ export interface Person {
   first_name: string;
   last_name: string;
   email: string;
-  friends: number[];
+  friends?: number[];
 }
 
 export class PeopleApi extends HTTPDataSource {
@@ -28,5 +28,16 @@ export class PeopleApi extends HTTPDataSource {
 
   getFriends(ids: number[]) {
     return this.personLoader.loadMany(ids);
+  }
+
+  async addPerson(firstName: string, lastName: string, email: string, friends?: number[]) {
+    return this.post<Person>('/people', {
+      body: {
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        friends,
+      }
+    }).then(res => res.body);
   }
 }

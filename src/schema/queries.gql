@@ -5,5 +5,5 @@ type Query {
   people: [Person!]
   person(id: Int!): Person
   products: [Product!]
-  product(id: Int!): Product
+  product(id: Int!): [Product!]
 }

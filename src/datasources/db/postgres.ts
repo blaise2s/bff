@@ -10,14 +10,18 @@ export class PostgresDb extends SQLDataSource {
   getProducts() {
     return this.db
       .select('*')
-      .from('product');
+      .from<Product>('product');
   }
 
   getProduct(id: number) {
     // TODO: Why does this not work?
     return this.db
       .select('*')
-      .from('product')
+      .from<Product>('product')
       .where({ id });
+  }
+
+  addProduct(product: Product) {
+    return this.db.insert(product, '*').into<Product>('product');
   }
 }
