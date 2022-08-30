@@ -14,7 +14,6 @@ export class PostgresDb extends SQLDataSource {
   }
 
   getProduct(id: number) {
-    // TODO: Why does this not work?
     return this.db
       .select('*')
       .from<Product>('product')
