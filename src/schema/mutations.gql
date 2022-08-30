@@ -1,3 +1,5 @@
 type Mutation {
-  addUser(firstName: String!, lastName: String!): User!
+  addUser(firstName: String!, lastName: String!): User
+  addPerson(firstName: String!, lastName: String!, email: String!, friends: [Int!]): Person
+  addProduct(id: Int!, name: String!, description: String): [Product!]
 }

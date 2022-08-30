@@ -13,7 +13,7 @@ interface UserFilter {
 
 const users: User[] = [
   { id: 1, firstName: 'Blaise', lastName: 'Schaeffer' },
-  { id: 2, firstName: 'Nate', lastName: 'Elliot' },
+  { id: 2, firstName: 'Johnny', lastName: 'Appleseed' },
 ] 
 
 const userSearchFilter = (search: string) => {
